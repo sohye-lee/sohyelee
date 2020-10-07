@@ -3,7 +3,7 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-light-gray: #eeeeee;
-    --color-dark: #263238;
+    --color-dark: #092736;
     --color-darker: #000a12;
     --color-darkgray: #4f5b62;
     --color-blue-main: #2979ff;
@@ -14,11 +14,11 @@
 
 
     /* font-size */
-    --fontsize-XL: 60px;
+    --fontsize-XL: 90px;
     --fontsize-L: 48px;
     --fontsize-M: 28px;
-    --fontsize-Regular: 18px;
-    --fontsize-S: 16px;
+    --fontsize-Regular: 20px;
+    --fontsize-S: 18px;
     --fontsize-XS: 14px;
 
     /* font-weight */
@@ -34,4 +34,42 @@
 /* universal tags setting */
 * {
     box-sizing: border-box;
+}
+
+/* typographies setting */
+
+h1 {
+    font-size: var(--fontsize-XL);
+    font-weight: var(--weight-bold);
+    color: var(--color-dark);
+    margin: 16px 0;
+    letter-spacing: 2px;
+    font-family: "Lato", sans-serif;
+}
+
+h2 {
+    font-size: var(--fontsize-M);
+    font-weight: var(--weight-semi-bold);
+    color: var(--color-darker);
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-family: "Lato", sans-serif;
+}
+
+h3 {
+    font-size: var(--fontsize-Regular);
+    font-weight: var(--weihgt-regular);
+    color: var(--color-darker);
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-size: var(--fontsize-S);
+    font-weight: var(--weihgt-thin);
+    color: var(--color-black);
+    margin: 4px 0;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
 }

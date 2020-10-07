@@ -1,0 +1,37 @@
+:root {
+    /* color-palette setting */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-light-gray: #eeeeee;
+    --color-dark: #263238;
+    --color-darker: #000a12;
+    --color-darkgray: #4f5b62;
+    --color-blue-main: #2979ff;
+    --color-blue-dark: #000051;
+    --color-pink-main: #e91e63;
+    --color-pink: #f8bbd0;
+    --color-pink-light: #ffeeff;
+
+
+    /* font-size */
+    --fontsize-XL: 60px;
+    --fontsize-L: 48px;
+    --fontsize-M: 28px;
+    --fontsize-Regular: 18px;
+    --fontsize-S: 16px;
+    --fontsize-XS: 14px;
+
+    /* font-weight */
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weihgt-regular: 400;
+    --weight-light: 300;
+    --weight-thin: 100;
+
+    /* size */
+}
+
+/* universal tags setting */
+* {
+    box-sizing: border-box;
+}

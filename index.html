@@ -23,7 +23,7 @@
     <!-- navbar -->
     <nav id="navbar">
         <div class="navbar__logo">
-            <a href="#home"><i class="navbar__logo__logo"><img src="img/logo.png" alt=""></i></a>
+            <a href="."><i class="navbar__logo__logo"><img src="img/logo.png" alt=""></i></a>
         </div>
         <div class="navbar__menu">
             <ul class="navbar__menu">
@@ -40,7 +40,22 @@
     <!-- Home -->
     <section id="home">
         <div class="home__greeting">
-            <h1 class="home__title">HELLO<br/>I AM SOHYE<br/>WEB DEVELOPER </h1>
+
+            <!-- Start: Filter for main title -->
+            <svg height="1" xmlns="http://www.w3.org/2000/svg">
+                <filter id="displacementFilter">
+                    <feTurbulence type="turbulence"
+                                numOctaves="3" result="turbulence">
+                    <animate attributeType="XML" attributeName="baseFrequency" from=".0009" to=".004"
+                        dur="10s" repeatCount="indefinite"/>
+                    </feTurbulence>
+                    <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                        scale="50" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+            </svg>
+            <!-- End: Filter for main title -->
+
+            <h1 class="home__title text">HELLO<br/>I AM SOHYE<br/>WEB DEVELOPER </h1>
             <a href="#contact"><button class="home__contact">CONTACT</button></a>
         </div>
         
@@ -53,19 +68,20 @@
         <div class="about__contents">
             <div class="about__left">
                 <div class="about__qualities">
-                    <p class="quality">Passionate Hardworker</p>
-                    <p class="quality">Fast Overcomer</p>
-                    <p class="quality">Persistent Learner</p>
-                    <p class="quality">Flexible Problem Solver</p>
+                    <p class="quality"><span>Passionate</span> Hardworker</p>
+                    <p class="quality"><span>Fast</span> Overcomer</p>
+                    <p class="quality"><span>Persistent</span> Learner</p>
+                    <p class="quality"><span>Flexible</span> Problem Solver</p>
+                </div>
+                <div class="about__introduction">
+                    <p>Full-stack Developer, Focused on Front-End Development.</p> 
+                    <p>Major in Fine Arts &  Museum Studies + Computer Science,</p>
+                    <p>Now Passionate for Developing Concepts and Codes through technologies.</p>    
                 </div>
             </div>
             <div class="about__right">
-                <p><span>Full-stack</span> Developer, <br/>
-                    Focused on <span>Front-End Development.</span><br/>
-                    Major in <span>Fine Arts</span> & <span></span> Museum Studies.<br/>
-                    Now <span>Passionate</span> For Learning, Building, and Developing Concepts and Codes through technologies.
-                </p>
-                
+
+               
                 <div class="about__jobs">
                     <div class="job">
                         <img src="img/about/nucamp_logo.png" alt="MassMutual" class="job__logo">
@@ -232,7 +248,7 @@
     <!-- Projects -->
     <section id="projects" class="section-right">
         <h3 class="chapter-small-title right">Projects</h3>
-        <h1 class="chapter-big-title left">WHAT I HAVE DONE</h1>
+        <h1 class="chapter-big-title right">WHAT I HAVE DONE</h1>
         <h2>Previous projects</h2>
         <div class="projects__categories">
             <button class="category__btn">All <span class="category__count">8</span> </button>
@@ -302,7 +318,7 @@
     <!-- References -->
     <section id="references" class="section-left">
         <h3 class="chapter-small-title left">Reference</h3>
-        <h1 class="chapter-big-title left">WHAT PEOPLE SAY ABOUT ME</h1>
+        <h1 class="chapter-big-title left">PEOPLE SAY </h1>
         <h2>Testimonials from my references</h2>
         <div class="testimonial">
             <div class="testimonial__speechBubble">

@@ -17,8 +17,8 @@
     --fontsize-XL: 90px;
     --fontsize-L: 48px;
     --fontsize-M: 28px;
-    --fontsize-Regular: 20px;
-    --fontsize-S: 18px;
+    --fontsize-Regular: 19px;
+    --fontsize-S: 17px;
     --fontsize-XS: 14px;
 
     /* font-weight */
@@ -45,7 +45,7 @@
                       9px 9px 7px #142030;
 }
 
-/* universal tags setting */
+/* ------------- Elements settings ------------- */
 * {
     box-sizing: border-box;
 }
@@ -54,6 +54,9 @@ body {
     margin: 0;
     padding: 0;
     cursor: default;
+    background-size: 100vw 100vh;
+    background-image: url("img/home-background-main.png");
+    background-attachment: fixed;
 }
 
 a {
@@ -67,7 +70,61 @@ ul {
     padding-left: 0;
 }
 
-/* typographies setting */
+button {
+    padding: 10px 12px;
+    margin: 0 4px;
+    color: var(--color-dark);
+    border-radius: var(--size-border-radius);
+    font-size: var(--fontsize-S);
+}
+button:hover {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    opacity: var(--opacity-default);
+    transition: background-color, color var(--transition-time) ease;
+    border: none;
+}
+
+.section {
+    padding: 40px;
+}
+
+.section-right * {
+    color: var(--color-white);
+}
+.section-left {
+    top: -155px;
+    left: 0;
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+}
+.chapter-small-title.right {
+    text-align: right;
+    text-transform: uppercase;
+    color: var(--color-white);
+    padding-top: 20px;
+}
+.chapter-small-title.left {
+    text-align: left;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.chapter-big-title.left {
+    text-align: left;
+}
+
+.chapter-big-title.right {
+    text-align: right;
+    color: var(--color-white);
+    padding-top: 20px;
+}
+
+
+
+
+/* ------------- Typography ------------- */
+
 
 h1 {
     font-size: var(--fontsize-XL);
@@ -105,23 +162,9 @@ p {
     font-family: "Roboto", sans-serif;
 }
 
-button {
-    padding: 10px 12px;
-    margin: 0 4px;
-    color: var(--color-dark);
-    border-radius: var(--size-border-radius);
-    font-size: var(--fontsize-S);
-}
-button:hover {
-    color: var(--color-white);
-    background-color: var(--color-dark);
-    opacity: var(--opacity-default);
-    transition: background-color, color var(--transition-time) ease;
-    border: none;
-}
 
-
-/* Navbar  */
+/* =============== PAGES =============== */
+/* ------------- Navbar ------------- */
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -131,7 +174,7 @@ button:hover {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 100;
 }
 
 .navbar__menu {
@@ -148,7 +191,11 @@ button:hover {
 .navbar__menu__item.active {
     padding: 8px 12px;
     margin: 0 4px;
-    border: 1px solid var(--color-dark) ;
+    background-color: var(--color-dark) ;
+    opacity: var(--opacity-default);
+}
+.navbar__menu__item.active h3 {
+    color: var(--color-white);
 }
 
 .navbar__menu__item:hover {
@@ -168,21 +215,80 @@ button:hover {
     width: 60px;
 }
 
-/* Home */
+/* ------------- Home ------------- */
 #home {
-    background: url("img/home-background-main.png") center/cover no-repeat;
     top: 0;
     left: 0;
-    position: fixed;
-    height: 100vh;
+    height: 60vh;
     width: 100vw;
 }
 
 .home__greeting {
-    margin: 15% 18%;
+    margin: 10% 18%;
 }
 
 .home__title {
-    color: var(--color-light-gray);
-    text-shadow: var(--text-shadow-3d);
+    color: var(--color-dark);
+}
+
+/* ------------- About ------------- */
+#about {
+    background: url("img/home-background-right.png") center top/cover no-repeat;
+    height: 120vh;
+    width: 100vw;
+    padding: 20px;
+    margin: 0;
+}
+.about__contents {
+    display: flex;
+    justify-content: center
+}
+
+.about__left {
+    flex-basis: 40%;
+    padding-top: 50px;
+    padding-right: 30px;
+    
+}
+
+.about-right {
+    flex-basis: 60%;
+}
+
+.quality {
+    font-size: var(--fontsize-L);
+    transform: rotate(-4deg)
+               skew(-4deg);
+    background-color: rgb(243, 243, 196);
+    color: var(--color-blue-main);
+}
+
+/* ------------- Skills ------------- */
+#skills {
+
+
+}
+
+/* ------------- Projects ------------- */
+#projects {
+    background: url("img/home-background-right.png") center top/cover no-repeat;
+    height: 110vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+/* ------------- References ------------- */
+#home {
+    top: 0;
+    left: 0;
+    height: 60vh;
+    width: 100vw;
+}
+/* ------------- Contact ------------- */
+#contact {
+    background: url("img/home-background-right.png") center top/cover no-repeat;
+    height: 110vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
 }

@@ -35,7 +35,39 @@
     /* other */
     --transition-time: .9s;
     --opacity-default: .9;
+
+    /* animations */
+    --animation-duration-default: 300ms;
+    --animation-duration-fast: 100ms;
+
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -1px) rotate(-1deg); }
+    20% { transform: translate(0px, 0px) rotate(1deg); }
+    30% { transform: translate(1px, 1px) rotate(0deg); }
+    40% { transform: translate(0px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 1px) rotate(-1deg); }
+    60% { transform: translate(-2px, 1px) rotate(0deg); }
+    70% { transform: translate(1px, 1px) rotate(-1deg); }
+    80% { transform: translate(0px, 0px) rotate(1deg); }
+    90% { transform: translate(1px, 0px) rotate(0deg); }
+    100% { transform: translate(0px, -1px) rotate(-1deg); }
+}
+
+@keyframes progress-bar {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+      background-color: var(--color-pink-main);
+    }
+    100% {
+      transform: scaleX(1);
+      transform-origin: left;
+      background-color: var(--color-pink-main);
+    }
+  }
 
 /* ------------- Elements settings ------------- */
 * {
@@ -223,9 +255,9 @@ p {
 #home {
     top: 0;
     left: 0;
-    height: 90vh;
+    height: 70vh;
     width: 100vw;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .home__greeting {
@@ -317,6 +349,11 @@ p {
     border-bottom: .4px solid white;
 }
 
+.timeline:hover {
+    background-color: var(--color-pink-main);
+    transition: all ease var(--animation-duration-fast);
+}
+
 .timeline__name {
     font-size: var(--fontsize-S);
     font-weight: var(--weight-light);
@@ -360,13 +397,31 @@ p {
     width: 170px;
     line-height: 175px;
     margin: auto;
+    font-size: 80px;
+}
+
+.field_icon:hover {
+    color: var(--color-pink-main);
     font-size: 100px;
+    transition: all ease var(--animation-duration-default);
+    animation: shake var(--animation-duration-default);
+}
+
+.field:hover {
+    animation: shake var(--animation-duration-default);
+}
+
+
+.field__title h2{
+    color: var(--color-blue-dark);
 }
 
 .field__description p {
     font-weight: var(--weight-light);
     font-size: var(--fontsize-XS);
+    color: var(--color-darkgray);
 }
+
 
 .skillset {
     font-family: "Roboto", sans-serif;
@@ -384,8 +439,7 @@ p {
 }
 
 .skillset__left {
-    flex-basis: 70%;
-    height: 430px;
+    flex-basis: 60%;
     background-color: var(--color-blue-main);
     margin-right: 3px;
     padding: 15px 20px 20px 20px;
@@ -394,8 +448,7 @@ p {
 }
 
 .skillset__right {
-    flex-basis: 30%;
-    height: 430px;
+    flex-basis: 40%;
     background-color: var(--color-blue-dark);
     padding: 15px 20px 20px 20px;
     border-top-right-radius: var(--size-border-radius);
@@ -413,13 +466,26 @@ p {
 
 .tools__list li {
     margin-top: 15px;
+    margin-left: 10px;
 }
 
 .skill__bar {
+    width: 100%;
     margin-top: 4px;
     height: 4px;
     background-color: var(--color-yellow-pale);
+    
 }
+
+#skill__value {
+    height: 4px;
+}
+
+.skill__value {
+    height: 4px;
+    animation: progress-bar ease-in-out 1.5s .3s 1 forwards;
+}
+
 
 .other {
     margin-top: 50px;

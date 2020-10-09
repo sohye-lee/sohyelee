@@ -40,6 +40,28 @@ closeBtn.addEventListener('click', () => {
     contactPopup.classList.add('hide');
 })
 
+// Sections fading out when scroll down 
+const homeSection = document.querySelector("#home"),
+      aboutSection = document.querySelector("#about"),
+      skillSection = document.querySelector("#skills"),
+      projectSection = document.querySelector("#projects"),
+      referenceSection = document.querySelector("#references");
+
+console.log(homeSection.children[0]);
+
+document.addEventListener('scroll', () => {
+    fadingOut(homeSection);
+    fadingOut(aboutSection);
+    fadingOut(skillSection);
+    fadingOut(projectSection);
+    fadingOut(referenceSection);
+})
+
+function fadingOut(section) {
+    const sectionHeight = section.getBoundingClientRect().height;
+    section.children[0].style.opacity =  1 - ((window.scrollY - section.offsetTop) / sectionHeight)*0.6;
+}
+
 // skill value bar triggered when scroll down to the page
 document.addEventListener('scroll', function (e) {
     var top  = window.pageYOffset + window.innerHeight,
@@ -53,7 +75,6 @@ document.addEventListener('scroll', function (e) {
         });
     }
 });
-
 
 // project : hover project --> skills glow
 const html = document.getElementById("html"),

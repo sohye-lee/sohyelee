@@ -151,7 +151,6 @@ button:hover {
     color: var(--color-white);
     padding: 20px;
     filter: url('#displacementFilter');
-    text-shadow: 5px 5px 2px var(--color-darker);
 
 }
 
@@ -163,7 +162,6 @@ button:hover {
 .chapter-big-title.left {
     text-align: left;
     filter: url('#displacementFilter');
-    text-shadow: 5px 5px 2px var(--color-darkgray);
 }
 
 
@@ -298,7 +296,6 @@ p {
 .home__title {
     color: var(--color-dark);
     filter: url('#displacementFilter');
-    text-shadow: 5px 5px 2px var(--color-darkgray);
 }
 
 .home__contact {
@@ -756,10 +753,12 @@ p {
 
 .speech-right {
     border-radius: 20px 20px 0px 20px;
+    margin-bottom: 10px;
 }
 
 .speech-left {
     border-radius: 20px 20px 20px 0px;
+    margin-bottom: 10px;
 }
 
 .name {

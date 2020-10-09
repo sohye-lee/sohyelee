@@ -210,6 +210,7 @@ p {
 
 
 /* =============== PAGES =============== */
+
 /* ------------- Navbar ------------- */
 #navbar {
     position: fixed;
@@ -819,6 +820,38 @@ p {
     bottom: 0px;
     left: 11%;
 }
+
+/* ------------- Arrow Up Button ------------- */
+#arrow__up  {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    height: 70px;
+    width: 70px;
+    font-size: 48px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-pink-main);
+    color: var(--color-white);
+    line-height: 60px;
+    text-align: center;
+    transition: all var(--animation-duration-default) ease;
+    z-index: 51;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#arrow__up.visible {
+    opacity: .5;
+    pointer-events: auto;
+}
+
+#arrow__up:hover {
+    opacity: 1;
+}
+
+
 
 /* For below 768px screen width */
 @media screen and (max-width:768px) {

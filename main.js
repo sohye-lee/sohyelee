@@ -62,6 +62,23 @@ function fadingOut(section) {
     section.children[0].style.opacity =  1 - ((window.scrollY - section.offsetTop) / sectionHeight)*0.6;
 }
 
+// Arrow Up button show and fade + click to home
+const arrowUp = document.querySelector("#arrow__up"),
+      homeHeight = document.querySelector("#home").getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+    if (window.scrollY < homeHeight) {
+        arrowUp.classList.remove("visible");
+    } else {
+        arrowUp.classList.add("visible");
+    }
+})
+
+arrowUp.addEventListener('click', () => {
+    const scrollTo = document.querySelector("#home");
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+})
+
 // skill value bar triggered when scroll down to the page
 document.addEventListener('scroll', function (e) {
     var top  = window.pageYOffset + window.innerHeight,

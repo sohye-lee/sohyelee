@@ -11,11 +11,12 @@
     <link rel="icon" type="image/png" href="img/logo.png">
 
     <!-- links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2d1691051b.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href=".css/all.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;600&family=Lato&family=Montserrat:wght@100;400;600&family=Open+Sans&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     
     <!-- css js-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="main.js" defer></script>
 </head>
 <body>
@@ -127,18 +128,17 @@
         <div class="skills__contents">
             <div class="skills_fields">
                 <div class="field">
-                    <div class="field_icon"><i class="fa fa-html5"></i></div>
+                    <div class="field_icon"><i class="fab fa-html5"></i></div>
                     <div class="field__title"><h2>Front-end</h2></div>
                     <div class="field__description">
                         <p>
                             HTML, CSS, Javascript, <br/> 
-                            Bootstrap, React, <br/>
-                            Vue, Web APIs
+                            Bootstrap, React, Vue
                         </p>  
                     </div>
                 </div>
                 <div class="field">
-                    <div class="field_icon"><i class="fa fa-lg fa-mobile"></i></div>
+                    <div class="field_icon"><i class="fas fa-mobile"></i></div>
                     <div class="field__title"><h2>Mobile</h2></div>
                     <div class="field__description">
                         <p>
@@ -257,69 +257,77 @@
     <section id="projects" class="section-right">
         <h3 class="chapter-small-title right">Projects</h3>
         <h1 class="chapter-big-title right">WHAT I HAVE DONE</h1>
-        <h2>Previous projects</h2>
-        <div class="projects__categories">
-            <button class="category__btn">All <span class="category__count">8</span> </button>
-            <button class="category__btn">Web <span class="category__count">8</span> </button>
-            <button class="category__btn">Mobile <span class="category__count">4</span> </button>
-        </div>
-        <div class="projects__projects">
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
-            <a href="" class="project" target="blank">
-                <img src="" alt="" class="project__img">
-                <div class="project__description">
-                    <h3>Before The Dawn - Camp site</h3>
-                    <span>Camp reservation website</span>
-                </div>
-            </a>
+        <div class="projects__content">
+            <div class="projects__categories">
+                <button class="category__btn active">All <span class="category__count">8</span> </button>
+                <button class="category__btn">Web <span class="category__count">8</span> </button>
+                <button class="category__btn">Mobile <span class="category__count">3</span></button>
+            </div>
+            <div class="projects__skillshow">
+                <i class="projects__skill fa fa-html5" id="html"></i>
+                <i class="projects__skill fa fa-css3" id="css"></i>
+                <i class="projects__skill fab fa-js-square" id="js"></i>
+                <i class="projects__skill fab fa-bootstrap" id="bootstrap"></i>
+                <i class="projects__skill fab fa-node" id="node"></i>
+                <i class="projects__skill fab fa-react" id="react"></i>
+                <i class="projects__skill fab fa-python" id="python"></i>
+            </div>
+            <div class="projects__projects">
+                <a href="" class="project" target="blank" >
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjCamp">
+                        <h3 id="pjCamp">Before The Dawn</h3>
+                        <p id="pjCamp">Camp Reservation website</p>
+                    </div>
+                </a>
+                <a href="" class="project" target="blank">
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjCafe">
+                        <h3 id="pjCafe">Magnolia 0f Vienna</h3>
+                        <p id="pjCafe">Dessert Café Website</p>
+                    </div>
+                </a>
+                <a href="" class="project" target="blank">
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjTodo">
+                        <h3 id="pjTodo">Organize Your Day</h3>
+                        <p id="pjTodo">To-Do List Website & App</p>
+                    </div>
+                </a>
+                <a href="" class="project" target="blank">
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjShop">
+                        <h3 id="pjShop">Naturients Pet</h3>
+                        <p id="pjShop">Pet Supply Shop Website</p>
+                    </div>
+                </a>
+                <a href="" class="project" target="blank">
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjKite">
+                        <h3 id="pjKite">Quite Kite</h3>
+                        <p id="pjKite">Weather Information Web & App</p>
+                    </div>
+                </a>
+                <a href="" class="project" target="blank">
+                    <div class="project__image">
+                        <img src="img/projects/project1.jpg" alt="" class="project__img">
+                    </div>
+                    <div class="project__description" id="pjJs">
+                        <h3 id="pjJs">Jelly Silly</h3>
+                        <p id="pjJs">Javascript Game Projects</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 

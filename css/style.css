@@ -102,11 +102,12 @@ button {
     border-radius: var(--size-border-radius);
     font-size: var(--fontsize-S);
 }
+
 button:hover {
     color: var(--color-white);
     background-color: var(--color-dark);
     opacity: var(--opacity-default);
-    transition: background-color, color var(--transition-time) ease;
+    transition: all var(--animation-duration-default) ease;
     border: none;
 }
 
@@ -239,11 +240,12 @@ p {
     color: var(--color-white);
 }
 
-.navbar__menu__item:hover {
+.navbar__menu__item:hover, .navbar__toggle-btn {
     background-color: var(--color-dark);
     opacity: var(--opacity-default);
     color: var(--color-white);
     transition: background-color var(--transition-time)  ease;
+    /* border: none; */
 }
 
 .navbar__menu__item a h3:hover {
@@ -254,6 +256,16 @@ p {
 .navbar__logo__logo>img {
     height: 60px;
     width: 60px;
+}
+
+.navbar__toggle-btn {
+    position: absolute;
+    right: 32px;
+    color: var(--color-dark);
+    border: none;
+    background-color: transparent;
+    font-size: 35px;
+    display: none;
 }
 
 /* ------------- Home ------------- */
@@ -380,7 +392,7 @@ p {
     margin: auto;
     margin-top: 80px;
 }
-.skills_fields {
+.skills__fields {
     max-width: 800px;
     margin: auto;
     display: flex;
@@ -639,9 +651,14 @@ p {
 
 
 /* ------------- References ------------- */
+#references {
+    height: 70vh;
+    min-height: auto;
+    margin-top: 30px;
+}
 .references__content {
     max-width: 800px;
-    margin: auto ;
+    margin: 0px auto 100px auto ;
 }
 
 .references__title {
@@ -727,3 +744,68 @@ p {
     bottom: 0px;
     left: 11%;
 }
+
+/* For below 768px screen width */
+@media screen and (max-width:768px) {
+    .navbar__toggle-btn {
+        display: block;
+    }
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        background-image: var(--color-dark);
+    }
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    .section-right, .section-left {
+        height: auto;
+        min-height: 180vh;
+    }
+    #home {
+        height: 50vh;
+    }
+    .home__title, .chapter-big-title {
+        font-size: 70px;
+    }
+    #about {
+        padding-top: 50px;
+    }
+    .about__contents {
+        flex-direction: column;
+    }
+    .quality {
+        font-size: 24px;
+    }
+    #skills {
+        min-height: 250vh;
+    }
+    .skills__fields {
+        flex-direction: column;
+    }
+    .skillset {
+        display: flex;
+        flex-direction: column;
+    }
+    #projects {
+        padding-top: 80px;
+    }
+    .projects__content {
+        margin-bottom: 170px;
+    }
+    .project__image {
+        width: 400px;
+        height: 250px;
+    }
+    .project__image img {
+        max-width: 100%;
+        max-height: 100%;
+        size: cover;
+    }
+}
+
+
+

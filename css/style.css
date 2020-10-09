@@ -150,7 +150,9 @@ button:hover {
     text-align: right;
     color: var(--color-white);
     padding: 20px;
-    filter: url('#displacementFilter')
+    filter: url('#displacementFilter');
+    text-shadow: 5px 5px 2px var(--color-darker);
+
 }
 
 .chapter-small-title.left {
@@ -160,7 +162,8 @@ button:hover {
 }
 .chapter-big-title.left {
     text-align: left;
-    filter: url('#displacementFilter')
+    filter: url('#displacementFilter');
+    text-shadow: 5px 5px 2px var(--color-darkgray);
 }
 
 
@@ -294,7 +297,8 @@ p {
 
 .home__title {
     color: var(--color-dark);
-    filter: url('#displacementFilter')
+    filter: url('#displacementFilter');
+    text-shadow: 5px 5px 2px var(--color-darkgray);
 }
 
 .home__contact {

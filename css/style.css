@@ -73,6 +73,7 @@
 /* ------------- Elements settings ------------- */
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -110,6 +111,8 @@ button:hover {
     transition: all var(--animation-duration-default) ease;
     border: none;
 }
+
+
 
 .section {
     padding: 30px;
@@ -208,50 +211,58 @@ p {
 /* =============== PAGES =============== */
 /* ------------- Navbar ------------- */
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: transparent;
     align-items: center;
     padding-left: 16px;
-    position: sticky;
     top: 0;
     left: 0;
     z-index: 100;
+    transition: all var(--animation-duration-default) ease-in-out;
+}
+
+.navbar-dark {
+    background-color: var(--color-dark) !important;
+    opacity: .8;
+}
+.navbar-dark li h3 {
+    color: var(--color-white);
 }
 
 .navbar__menu {
     display: flex;
+    margin-right: 10px;
 }
 
-.navbar__menu__item {
-    padding: 8px 12px;
+.navbar__menu__item h3{
+    padding: 10px 15px;
     margin: 0 4px;
     color: var(--color-dark);
     border-radius: var(--size-border-radius);
+    transition: all var(--animation-duration-default) ease;
 }
 
-.navbar__menu__item.active {
-    padding: 8px 12px;
-    margin: 0 4px;
-    background-color: var(--color-dark) ;
-    opacity: var(--opacity-default);
-}
 .navbar__menu__item.active h3 {
+    border: 1px solid var(--color-white);
+    background-color: var(--color-dark);
     color: var(--color-white);
 }
 
-.navbar__menu__item:hover, .navbar__toggle-btn {
+.navbar__menu__item h3:hover, .navbar__toggle-btn {
     background-color: var(--color-dark);
     opacity: var(--opacity-default);
     color: var(--color-white);
     transition: background-color var(--transition-time)  ease;
-    /* border: none; */
+    border: 1px solid var(--color-white);
 }
 
-.navbar__menu__item a h3:hover {
-    color: var(--color-white);
+/* .navbar__menu__item :hover {
+    color: var(--color-white) !important;
     transition: color var(--transition-time) ease;
-}
+} */
 
 .navbar__logo__logo>img {
     height: 60px;
@@ -270,16 +281,15 @@ p {
 
 /* ------------- Home ------------- */
 #home {
-    top: 0;
-    left: 0;
-    height: 65vh;
+    max-height: 70vh;
     width: 100vw;
-    margin-bottom: 80px;
+    margin: 115px auto;
 }
 
 .home__greeting {
     max-width: 900px;
     margin: auto;
+    position: relative;
 }
 
 .home__title {
@@ -291,7 +301,69 @@ p {
     margin-top: 30px;
 }
 
+.contact__popup {
+    position: fixed;
+    top: 30vh;
+    left: 30vw;
+    height: 300px;
+    width: 500px;
+    background: var(--color-blue-main);
+    border-radius: var(--size-border-radius);
+    text-align: center;
+    padding: 30px;
+    box-shadow: 5px 5px 2px 1px rgba(10, 10, 10, .5);
+    z-index: 10;
+}
 
+.contact__popup__title {
+    text-transform: uppercase;
+    color: var(--color-white);
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.contact__popup__content * {
+    color: var(--color-white);
+    margin: 20px auto;
+    font-weight: var(--weight-light);
+}
+.popup__links {
+    margin-top: 10px;
+}
+.popup__links a i {
+    font-size: 40px;
+    margin: 8px 15px;
+    opacity: .5;
+    transition: all var(--animation-duration-default) ease;
+}
+.popup__email a {
+    transition: all var(--animation-duration-default) ease;
+}
+.popup__email a:hover {
+    color: var(--color-orange);
+}
+.popup__links a i:hover {
+    color: var(--color-orange);
+    font-size: 48px;
+    opacity: 1;
+}
+.popup__close {
+    border: 1px solid var(--color-white);
+    background-color: transparent;
+    transition: all var(--animation-duration-default) ease;
+    margin: 0 auto;
+}
+.popup__close:hover {
+    background-color: var(--color-orange);
+}
+
+.popup__close:active {
+    transform: translateX(2px, 2px);
+}
+
+.hide {
+    display: none;
+}
 
 /* ------------- About ------------- */
 #about {
@@ -770,6 +842,11 @@ p {
     }
     .home__title, .chapter-big-title {
         font-size: 70px;
+    }
+    .contact__popup {
+        top: 30px;
+        left: 20px;
+        transform: scale(.7);
     }
     #about {
         padding-top: 50px;

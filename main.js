@@ -1,6 +1,46 @@
 
-// skill value bar triggered when scroll down to the page
+'use strict';
 
+
+// navbar color change with scroll down
+const nav = document.querySelector("#navbar"),
+      navMenu = document.querySelectorAll(".navbar__menu h3"),
+      navHeight = nav.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+    if (window.scrollY > navHeight) {
+        nav.classList.add("navbar-dark");
+    } else  {
+        nav.classList.remove("navbar-dark");
+    }
+});
+
+// Handle scrolling with click on navbar menu
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener('click', (event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    if (link == null) {
+        return;
+    } else {
+        const scrollTo = document.querySelector(link);
+        scrollTo.scrollIntoView({behavior: 'smooth'});
+    }
+})
+
+// Handle scrolling with click on contact button on Home
+const contactBtn = document.querySelector(".home__contact");
+const contactPopup = document.querySelector(".contact__popup");
+contactBtn.addEventListener('click', () => {
+    contactPopup.classList.remove('hide');
+})
+
+const closeBtn = document.querySelector(".popup__close");
+closeBtn.addEventListener('click', () => {
+    contactPopup.classList.add('hide');
+})
+
+// skill value bar triggered when scroll down to the page
 document.addEventListener('scroll', function (e) {
     var top  = window.pageYOffset + window.innerHeight,
         itemTop = document.querySelector('#skills').offsetTop,

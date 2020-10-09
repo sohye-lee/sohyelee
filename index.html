@@ -28,12 +28,12 @@
         </div>
         <div class="navbar__menu">
             <ul class="navbar__menu">
-                <li class="navbar__menu__item active"><a href="#about"><h3>About</h3></a></li>
-                <li class="navbar__menu__item"><a href="#skills"><h3>Skills</h3></a></li>
-                <li class="navbar__menu__item"><a href="#projects"><h3>Projects</h3></a></li>
-                <li class="navbar__menu__item"><a href="#references"><h3>References</h3></a></li>
-                <li class="navbar__menu__item"><a href="#contact"><h3>Contact</h3></a></li>
-                <li class="navbar__menu__item"><a href="" download=""><h3>Résumé</h3></a></li>
+                <li class="navbar__menu__item active"><h3 data-link="#home">About</h3></li>
+                <li class="navbar__menu__item"><h3 class="" data-link="#skills">Skills</h3></li>
+                <li class="navbar__menu__item"><h3 class="" data-link="#projects">Projects</h3></li>
+                <li class="navbar__menu__item"><h3 class="" data-link="#references">References</h3></li>
+                <li class="navbar__menu__item"><h3 class="" data-link="#contact">Contact</h3></li>
+                <li class="navbar__menu__item"><h3 class="">Résumé</h3></li>
             </ul>
         </div>
 
@@ -62,7 +62,20 @@
             <!-- End: Filter for main title -->
 
             <h1 class="home__title text">HELLO<br/>I AM SOHYE<br/>WEB DEVELOPER </h1>
-            <a href="#contact"><button class="home__contact">CONTACT</button></a>
+            <button class="home__contact">CONTACT</button>
+            <div class="contact__popup hide">
+                <h2 class="contact__popup__title">
+                    Let's Connect!
+                </h2>
+                <div class="contact__popup__content">
+                    <h3 class="popup__email"><a href="mel:sohyelee@gmail.com">sohyelee@gmail.com</a></h3>
+                    <div class="popup__links">
+                        <a href="https://github.com/sohye-lee" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="https://linkedin.com/in/sohyelee" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <button class="popup__close">CLOSE</button>
+                </div>  
+            </div>
         </div>
         
     </section>

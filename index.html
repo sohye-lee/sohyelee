@@ -21,7 +21,7 @@
 </head>
 <body>
     
-    <i class="fas fa-chevron-up fa-2x" id="arrow__up" data-link="#home"></i>
+    <i class="fas fa-chevron-up fa-2x" id="arrow__up"></i>
     
     <nav id="navbar">
         <div class="navbar__logo">
@@ -29,12 +29,12 @@
         </div>
         <div class="navbar__menu">
             <ul class="navbar__menu">
-                <li class="navbar__menu__item active"><h3 data-link="#home">About</h3></li>
-                <li class="navbar__menu__item"><h3 class="" data-link="#skills">Skills</h3></li>
-                <li class="navbar__menu__item"><h3 class="" data-link="#projects">Projects</h3></li>
-                <li class="navbar__menu__item"><h3 class="" data-link="#references">References</h3></li>
-                <li class="navbar__menu__item"><h3 class="" data-link="#contact">Contact</h3></li>
-                <li class="navbar__menu__item"><h3 class="">Résumé</h3></li>
+                <li class="navbar__menu__item"><h3 data-link="#home">About</h3></li>
+                <li class="navbar__menu__item"><h3 data-link="#skills">Skills</h3></li>
+                <li class="navbar__menu__item"><h3 data-link="#projects">Projects</h3></li>
+                <li class="navbar__menu__item"><h3 data-link="#references">References</h3></li>
+                <li class="navbar__menu__item"><h3 data-link="#contact">Contact</h3></li>
+                <li class="navbar__menu__item"><h3>Résumé</h3></li>
             </ul>
         </div>
 
@@ -282,9 +282,9 @@
             <h1 class="chapter-big-title right">WHAT I HAVE DONE</h1>
             <div class="projects__content">
                 <div class="projects__categories">
-                    <button class="category__btn active">All <span class="category__count">8</span> </button>
-                    <button class="category__btn">Web <span class="category__count">8</span></button>
-                    <button class="category__btn">Mobile <span class="category__count">3</span></button>
+                    <button class="category__btn selected" data-filter="*">All <span class="category__count">8</span> </button>
+                    <button class="category__btn" data-filter="web">Web <span class="category__count">8</span></button>
+                    <button class="category__btn" data-filter="mobile">Mobile <span class="category__count">3</span></button>
                 </div>
                 <div class="projects__skillshow">
                     <i class="projects__skill fa fa-html5" id="html"></i>
@@ -296,16 +296,16 @@
                     <i class="projects__skill fab fa-python" id="python"></i>
                 </div>
                 <div class="projects__projects">
-                    <a href="" class="project" target="blank" >
+                    <a href="" class="project" target="blank" data-type="*">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
                         <div class="project__description" id="pjCamp">
                             <h3 id="pjCamp">Before The Dawn</h3>
-                            <p id="pjCamp">Camp Reservation website</p>
+                            <p id="pjCamp">Camp Reservation website & App</p>
                         </div>
                     </a>
-                    <a href="" class="project" target="blank">
+                    <a href="" class="project" target="blank" data-type="web">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
@@ -314,16 +314,16 @@
                             <p id="pjCafe">Dessert Café Website</p>
                         </div>
                     </a>
-                    <a href="" class="project" target="blank">
+                    <a href="" class="project" target="blank" data-type="mobile">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
                         <div class="project__description" id="pjTodo">
                             <h3 id="pjTodo">Organize Your Day</h3>
-                            <p id="pjTodo">To-Do List Website & App</p>
+                            <p id="pjTodo">To-Do List App</p>
                         </div>
                     </a>
-                    <a href="" class="project" target="blank">
+                    <a href="" class="project" target="blank" data-type="web">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
@@ -332,7 +332,7 @@
                             <p id="pjShop">Pet Supply Shop Website</p>
                         </div>
                     </a>
-                    <a href="" class="project" target="blank">
+                    <a href="" class="project" target="blank" data-type="*">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
@@ -341,7 +341,7 @@
                             <p id="pjKite">Weather Information Web & App</p>
                         </div>
                     </a>
-                    <a href="" class="project" target="blank">
+                    <a href="" class="project" target="blank" data-type="web">
                         <div class="project__image">
                             <img src="img/projects/project1.jpg" alt="" class="project__img">
                         </div>
@@ -388,7 +388,7 @@
                 <a href="https://github.com/sohye-lee" target="_blank"><i class="fa fa-github"></i></a>
                 <a href="https://linkedin.com/in/sohyelee" target="_blank"><i class="fa fa-linkedin"></i></a>
             </div>
-            <p class="contact__rights"> 2020 So Hye Lee. All rights reserved.</p>
+            <p class="contact__rights">© 2020 So Hye Lee. All rights reserved.</p>
         </div>       
     </section>
 

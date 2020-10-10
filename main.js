@@ -2,7 +2,7 @@
 'use strict';
 
 
-// navbar color change with scroll down
+// =========== NAVBAR :  ============ //
 const nav = document.querySelector("#navbar"),
       navMenu = document.querySelectorAll(".navbar__menu h3"),
       navHeight = nav.getBoundingClientRect().height;
@@ -15,11 +15,11 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// Handle scrolling with click on navbar menu
+// =========== NAVBAR : MOVE TO THE LINKED SECTION ============ //
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener('click', (event) => {
-    const target = event.target;
-    const link = target.dataset.link;
+    const target = event.target,
+          link = target.dataset.link;
     if (link == null) {
         return;
     } else {
@@ -28,9 +28,9 @@ navbarMenu.addEventListener('click', (event) => {
     }
 })
 
-// Handle scrolling with click on contact button on Home
-const contactBtn = document.querySelector(".home__contact");
-const contactPopup = document.querySelector(".contact__popup");
+// =========== HOME : CONTACT BUTTON OPENING A WINDOW ============ //
+const contactBtn = document.querySelector(".home__contact"),
+      contactPopup = document.querySelector(".contact__popup");
 contactBtn.addEventListener('click', () => {
     contactPopup.classList.remove('hide');
 })
@@ -40,14 +40,12 @@ closeBtn.addEventListener('click', () => {
     contactPopup.classList.add('hide');
 })
 
-// Sections fading out when scroll down 
+// =========== SCROLL : FADING OUT EFFECT WITH SCROLL ============ //
 const homeSection = document.querySelector("#home"),
       aboutSection = document.querySelector("#about"),
       skillSection = document.querySelector("#skills"),
       projectSection = document.querySelector("#projects"),
       referenceSection = document.querySelector("#references");
-
-console.log(homeSection.children[0]);
 
 document.addEventListener('scroll', () => {
     fadingOut(homeSection);
@@ -62,7 +60,7 @@ function fadingOut(section) {
     section.children[0].style.opacity =  1 - ((window.scrollY - section.offsetTop) / sectionHeight)*0.6;
 }
 
-// Arrow Up button show and fade + click to home
+// =========== ARROW UP : SCROLL TO THE HOME PAGE ============ //
 const arrowUp = document.querySelector("#arrow__up"),
       homeHeight = document.querySelector("#home").getBoundingClientRect().height;
 
@@ -79,12 +77,13 @@ arrowUp.addEventListener('click', () => {
     scrollTo.scrollIntoView({behavior: 'smooth'});
 })
 
-// skill value bar triggered when scroll down to the page
+
+// =========== SKILLS : TRIGGERING PROGRESS BARS ============ //
 document.addEventListener('scroll', function (e) {
-    var top  = window.pageYOffset + window.innerHeight,
-        itemTop = document.querySelector('#skills').offsetTop,
-        isVisible = top > itemTop,
-        valueList = document.querySelectorAll('#skill__value');
+    const top  = window.pageYOffset + window.innerHeight,
+          itemTop = document.querySelector('#skills').offsetTop,
+          isVisible = top > itemTop,
+          valueList = document.querySelectorAll('#skill__value');
   
      if (isVisible) {
         valueList.forEach(function(item) {
@@ -93,7 +92,7 @@ document.addEventListener('scroll', function (e) {
     }
 });
 
-// project : hover project --> skills glow
+// =========== PROJECT : FILTERING SKILLS FOR EACH PROJECT ============ //
 const html = document.getElementById("html"),
       css = document.getElementById("css"),
       js = document.getElementById("js"),
@@ -119,8 +118,6 @@ var projects = [pjCamp, pjCafe, pjTodo, pjShop, pjKite, pjJs],
     arrays = [pjCampArray, pjCafeArray, pjTodoArray, pjShopArray, pjKiteArray, pjJsArray];
 
 for (let i = 0; i < projects.length; i++) {
-    // var project = projects[i],
-    //     pjArray = arrays[i];
     for (let a = 0; a < projects[i].length; a++) {
         projects[i][a].addEventListener("mouseenter", function() {
             arrays[i].forEach(function(item) {
@@ -135,5 +132,44 @@ for (let i = 0; i < projects.length; i++) {
     }
 }
 
+ 
+// =========== PROJECT : FILTERING PROJECT ============ //
+const projectCategoryBtns = document.querySelector(".projects__categories"),
+      projectsContainer = document.querySelector(".projects__projects"),
+      projectsArray = document.querySelectorAll(".project");
+
+projectCategoryBtns.addEventListener('click', (event) => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter ;
+    if (filter == null) {
+        return;
+    } 
+
+    projectsContainer.classList.add("anim-out");
+
+    setTimeout(() => {
+        projectsArray.forEach((project) => {
+            const type = project.dataset.type;
+            if (filter === "*" || type === filter || type === "*") {
+                project.classList.remove("hide");
+            } else {
+                project.classList.add("hide");
+            }
+        })
+
+        projectsContainer.classList.remove("anim-out");
+    }, 300)
+    
+})
 
 
+// =========== PROJECT : CATEGORY BTN SELECTED / NOT - TOGGLE ============ //
+const categoryBtns = document.querySelectorAll(".category__btn");
+
+projectCategoryBtns.addEventListener('click', (e) => {
+    categoryBtns.forEach((btn) => {
+        btn.classList.remove('selected');
+    })
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parenNode;
+    e.target.classList.add('selected')
+})
+      

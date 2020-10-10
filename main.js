@@ -17,16 +17,32 @@ document.addEventListener('scroll', () => {
 
 // =========== NAVBAR : MOVE TO THE LINKED SECTION ============ //
 const navbarMenu = document.querySelector(".navbar__menu");
+
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target,
           link = target.dataset.link;
     if (link == null) {
         return;
-    } else {
-        const scrollTo = document.querySelector(link);
-        scrollTo.scrollIntoView({behavior: 'smooth'});
-    }
+    } 
+    navbarMenu.classList.remove('open');
+    navbar.classList.remove('darkMode');
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+    
 })
+
+
+
+// =========== NAVBAR : TOGGLE BUTTON ============ //
+const hamburger = document.querySelector('.navbar__toggle-btn'),
+      navbar = document.querySelector('#navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('darkMode');
+    navbarMenu.classList.toggle('open'); 
+})
+
+
 
 // =========== HOME : CONTACT BUTTON OPENING A WINDOW ============ //
 const contactBtn = document.querySelector(".home__contact"),
@@ -57,7 +73,7 @@ document.addEventListener('scroll', () => {
 
 function fadingOut(section) {
     const sectionHeight = section.getBoundingClientRect().height;
-    section.children[0].style.opacity =  1 - ((window.scrollY - section.offsetTop) / sectionHeight)*0.6;
+    section.children[0].style.opacity =  1 - ((window.scrollY - section.offsetTop) / sectionHeight)*0.4;
 }
 
 // =========== ARROW UP : SCROLL TO THE HOME PAGE ============ //
@@ -104,7 +120,7 @@ const html = document.getElementById("html"),
 const pjCamp = document.querySelectorAll("#pjCamp"),
       pjCampArray = [html, css, js, bootstrap, node, react],
       pjCafe = document.querySelectorAll("#pjCafe"),
-      pjCafeArray = [html, css, node],
+      pjCafeArray = [html, css, node, bootstrap],
       pjTodo = document.querySelectorAll("#pjTodo"),
       pjTodoArray = [html, css, js],
       pjShop = document.querySelectorAll("#pjShop"),

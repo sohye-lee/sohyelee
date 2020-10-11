@@ -2,7 +2,7 @@
 'use strict';
 
 
-// =========== NAVBAR :  ============ //
+// =========== NAVBAR : DART WHEN SCROLL DOWN ============ //
 const nav = document.querySelector("#navbar"),
       navMenu = document.querySelectorAll(".navbar__menu h3"),
       navHeight = nav.getBoundingClientRect().height;
@@ -10,8 +10,11 @@ const nav = document.querySelector("#navbar"),
 document.addEventListener('scroll', () => {
     if (window.scrollY > navHeight) {
         nav.classList.add("navbar-dark");
+        hamburger.classList.add("bright");
+        
     } else  {
         nav.classList.remove("navbar-dark");
+        hamburger.classList.remove("bright");
     }
 });
 
